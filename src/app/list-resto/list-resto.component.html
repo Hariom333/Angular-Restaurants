@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>All Restaurants</h1>
+    <table class="table">
+      <thead>
+        <tr class="danger">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr class="success" *ngFor="let items of collection">
+          <td>{{items.id}}</td>
+          <td>{{items.name}}</td>
+          <td>{{items.email}}</td>
+          <td>{{items.address}}</td>
+          <td> <i class="fa fa-trash" style = "color:red;" (click)="deleteResto(items.id)"></i> 
+            <a routerLink="/update/{{items.id}}"> <i class="fa fa-edit" style = "color:blue;"></i> </a>
+            
+          </td>
+        </tr>
+       
+       
+      </tbody>
+    </table>
+  </div>
+
+
+
+
