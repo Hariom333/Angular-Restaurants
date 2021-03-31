@@ -9,6 +9,7 @@ import {RestoService} from '../resto.service';
   styleUrls: ['./update-resto.component.css']
 })
 export class UpdateRestoComponent implements OnInit {
+  alert:boolean = false
 
   EditResto =  new FormGroup({
     
@@ -23,18 +24,32 @@ export class UpdateRestoComponent implements OnInit {
   ngOnInit(): void {
     
     //console.warn(this.router.snapshot.params.id)
-    this.resto.getCurrentResto(this.router.snapshot.params.id).subscribe((result)=> {
+    this.resto.getCurrentResto(this.router.snapshot.params.id).subscribe((result: any)=> {
  
-      console.log(result);
+     // console.log(result);
 
-    });
+      this.EditResto =  new FormGroup({
     
-
+        name : new FormControl(result['name']),
+        email: new FormControl(result['email']),
+        address : new FormControl(result['address'])
+      
+      })
+    })
   }
 
-  UpdateResto(){
+Collection(){
 
-    alert('ok');
-  }
+console.log("item",this.EditResto.value);
+this.resto.updateResto(this.router.snapshot.params.id,this.EditResto.value).subscribe((result)=>{
+console.log("result",result)
+this.alert = true;
+});
+}
+
+closeAlert(){
+  this.alert = false;
+}
+
 
 }

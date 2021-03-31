@@ -1,0 +1,16 @@
+.footer {
+    margin: 0 0 10px;
+    margin: auto;
+    background-color: #a6aeb5;
+    padding: 20px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+}
+
+
+.container-fluid {
+    background-color: #a6aeb5;
+}

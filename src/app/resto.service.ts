@@ -31,6 +31,11 @@ return this.http.get(`${this.url}/${id}`)
 
 }
 
+updateResto(id:any, data: any){
+  return this.http.put(`${this.url}/${id}`,data)
+  
+  }
+  
 
 
 }

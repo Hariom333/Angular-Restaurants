@@ -1,11 +1,11 @@
 
-<!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade in">
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade in">
     <a (click)="closeAlert()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>Success!</strong> Your Data has been Entered !!
   </div>
-   -->
+  
   <h1>Edit  Restaurants</h1>
-  <form  [formGroup]="addResto" (ngSubmit)= "UpdateResto()">
+  <form [formGroup]="EditResto" (ngSubmit)= "Collection()">
      
       <div class="form-group">
           <label for="name">Name:</label>
